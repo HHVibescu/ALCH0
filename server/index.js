@@ -18,6 +18,10 @@ const balances = {
   "02da59f1e73db4cd432d44f36f9d3c2f703f4b7c8c7f853e525dea373f552ec224": 75,
 };
 
+function auth(address) {
+  
+}
+
 app.get("/balance/:address", (req, res) => {
   const { address } = req.params;
   const balance = balances[address] || 0;
