@@ -21,15 +21,15 @@ const balances = {
 
 app.get("/balance/:address", (req, res) => {
   const { address } = req.params;
-  address = secp256k1.getPublicKey(address)
-  const balance = balances[address] || 0;
+  let addresss = toHex(secp256k1.getPublicKey(address));
+  const balance = balances[addresss] || 0;
   res.send({ balance });
 });
 
 app.post("/send", (req, res) => {
   const { sender, recipient, amount } = req.body;
-  sender = secp256k1.getPublicKey(sender)
-  setInitialBalance(sender);
+  let senderr = toHex(secp256k1.getPublicKey(sender));
+  setInitialBalance(senderr);
   setInitialBalance(recipient);
 
   if (balances[sender] < amount) {
