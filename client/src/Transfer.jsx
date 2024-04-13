@@ -38,7 +38,7 @@ function Transfer({ address, setBalance }) {
       </label>
 
       <label>
-        Recipient
+        Recipient public key
         <input
           placeholder="Type an address, for example: 0x2"
           value={recipient}
